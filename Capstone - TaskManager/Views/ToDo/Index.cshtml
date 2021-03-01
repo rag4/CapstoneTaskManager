@@ -1,0 +1,34 @@
+﻿@model List<ToDoItem>
+
+@foreach (ToDoItem t in Model)
+{
+    <h2>@t.Description</h2>
+    <p>
+        <strong>Due Date:</strong> @t.DueDate<br />
+        @{
+            if (@t.Complete == false)
+            {
+            <p><strong>Status:</strong> Incomplete</p>
+        }
+        else
+        {
+            <p><strong>Status:</strong> Complete</p>
+        }
+
+        }
+    </p>
+
+    <a asp-action="Delete" asp-controller="ToDo" asp-route-id="@t.TaskId">
+        Delete Task
+    </a><br />
+    <a asp-action="Complete" asp-controller="ToDo" asp-route-id="@t.TaskId">
+        Toggle Status
+    </a>
+    <br />
+    <br />
+}
+
+
+<a asp-action="Create" asp-controller="ToDo">
+    Add a new task to your list
+</a>

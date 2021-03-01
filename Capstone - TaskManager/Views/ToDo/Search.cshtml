@@ -1,0 +1,28 @@
+﻿<h2>Search for a task:</h2>
+
+<form method="post" asp-controller="ToDo" asp-action="SearchWordResults">
+    <label>Search by word:</label>
+    <input type="text" name="word" /><br /><br />
+
+    <label>Filter through status:</label><br />
+    <input type="radio" id="none" name="status" value="none">
+    <label for="none">Do Not Filter</label><br />
+    <input type="radio" id="yes" name="status" value="yes">
+    <label for="yes">Complete</label><br />
+    <input type="radio" id="No" name="status" value="no">
+    <label for="No">Incomplete</label><br /><br />
+
+    <label>Filter through dates:</label><br />
+    <label>Yes</label>
+    <input type="radio" name="dateChoice" value="yes"><br />
+    <label>No</label>
+    <input type="radio" name="dateChoice" value="no"><br />
+    <label>From:</label>
+    <input type="datetime-local" name="startDate" onchange="console.log(this.value.split('T')[0]);" value="null"><br />
+    <label>To:</label>
+    <input type="datetime-local" name="endDate" onchange="console.log(this.value.split('T')[0]);" value="null">
+    <br /><br />
+
+
+    <input type="submit" />
+</form>

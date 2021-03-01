@@ -1,0 +1,15 @@
+﻿@model ToDoItem
+
+<form method="post" asp-controller="ToDo">
+    <p>
+        <input type="hidden" asp-for="@Model.TaskId" />
+        Are you sure you want to delete task: @Model.Description<br />
+        <input type="submit" value="Yes" />
+    </p>
+
+
+</form>
+
+<a asp-action="Index" asp-controller="ToDo">
+    <button>No</button>
+</a>

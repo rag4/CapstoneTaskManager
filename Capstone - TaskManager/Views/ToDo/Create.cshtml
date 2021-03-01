@@ -1,0 +1,11 @@
+﻿<h2>Add a new task to your list:</h2>
+
+<form method="post">
+    <label>Description</label>
+    <input type="text" name="Description" /><br />
+    <label>Due Date</label>
+    <input type="datetime-local" name="DueDate" onchange="console.log(this.value.split('T')[0]);">
+
+    <input type="submit" />
+</form>
+
